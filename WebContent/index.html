@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Spa treatment</title>
+
+<script src="javascript/jquery-3.3.1.min.js"></script>
+<script src="javascript/jquery.dataTables.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="javascript/main.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="css/jquery.dataTables.css" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<header>
+
+	<!--<h2>Welcome to the Spa Application</h2> -->
+	<!-- 	<img src="picture/massagem.jpg" alt="Photo"> -->
+	<div id="wrapper">
+		<img class="full" src="picture/spa_home.jpg" alt="Photo">
+	</div>
+
+</header>
+<body>
+	<section>
+		<div>
+			<nav class="navbar navbar-expand-sm bg-light navbar-light">
+				<ul class="navbar-nav" role="tablist">
+					<li class="nav-item active"><a data-toggle="tab"
+						class="nav-link" href="#home" role="tab">Home</a></li>
+					<li class="nav-item"><a data-toggle="tab" class="nav-link"
+						href="#menu1" role="tab">Spa Treatment</a></li>
+					<li class="nav-item"><a data-toggle="tab" class="nav-link"
+						href="#menu2" role="tab">Admin</a></li>
+				</ul>
+			</nav>
+			</div>
+
+			<div class="tab-content">
+				<div id="home" class="tab-pane active in">
+					<div class="container">
+						<p></p>
+						<h3>Spa and Beauty Treatments</h3>
+						<p>
+						<p>Browse our wide range of beauty and Spa treatments,
+							available at our conveniently located Ireland salons.
+							 Whether you
+are looking for facials, massages, hair removal or anything in
+							between, Beauty Spa has the right beauty treatment for you.</p>
+						<p></p>
+					</div>
+				</div>
+
+				<div id="menu1" class="tab-pane fade">
+				
+					<div id="gridDiv">
+							<p></p>
+						<label>Service:</label> 
+						<input type="text" id="name" name="name" />
+						<p></p>
+						<h3>Spa and Beauty Treatments</h3>
+						<p></p>
+					</div>
+				</div>
+<!--Treatments List-->
+				<div id="menu2" class="tab-pane fade">
+					<p></p>
+					<h3>Treatments List</h3>
+					<div class="beautyDatatable">
+						<table id="table_id" class="display">
+							<thead>
+								<tr>
+									<th>Service</th>
+									<th>Venue</th>
+									<th>Location</th>
+									<th>Price</th>
+									<th>Edit</th>
+								</tr>
+							</thead>
+							<tbody id="table_body">
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+	</section>
+
+
+<!--https://getbootstrap.com/docs/4.0/components/modal/-->
+
+	<div class="footer">
+		<p>Copyright © 2019 All Rights Reserved | A00267386</p>
+	</div>
+</body>
+	<div class="modal" id="myModal" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Edit Beauty</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	      			<div>
+	     			 	<label>id:</label>
+	            		<input id="beautyId" name="id"  type="text" disabled />
+	            		<br></br>
+	            		<label>Services:</label>
+						<input type="text" id="beautySerivce" name="beautySerivce"/>
+	            		<br></br>
+	            		<label>Duration:</label>
+						<input type="text" id="beautyDuration" name="beautyDuration"/>
+	            		<br></br>
+	            		<label>Venue:</label>
+						<input type="text" id="beautyVenue" name="beautyVenue"/>
+	            		<br></br>            			            		
+	            		<label>Location:</label>
+						<input type="text" id="beautyLocation" name="beautyLocation"/>
+	            		<br></br>
+	            		<label>Price:</label>
+						<input type="text" id="beautyPrice" name="bookprice"/>
+	            		<br></br>
+	            		<label>Description:</label>
+						<input type="text" id="beautyDescription" name="beautyDescription" required/> 
+					</div>
+	      </div>
+	      <div class="modal-footer">
+	     	 <button type="button" class="btn btn-primary" id="AddNew">Clear</button>
+	     	 <button type="button" class="btn btn-primary" id="Delete">Delete</button>
+	        <button type="button" class="btn btn-primary" id="Save">Save changes</button>
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+</html>
